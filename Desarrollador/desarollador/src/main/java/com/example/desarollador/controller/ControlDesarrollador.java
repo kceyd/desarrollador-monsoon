@@ -25,6 +25,7 @@ public class ControlDesarrollador {
     @Autowired
     private DesarrolladorAssembler assembler;
 
+    @SuppressWarnings("null")
     @GetMapping
     public CollectionModel<EntityModel<DTOdesarrollador>> obtenerDesarrolladores() {
         // El servicio trae las entidades del "interior", el assembler las vuelve "exterior" con links

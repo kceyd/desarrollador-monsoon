@@ -13,8 +13,9 @@ import com.example.desarollador.model.DesarrolladorGG;
 
 @Component
 public class DesarrolladorAssembler implements RepresentationModelAssembler<DesarrolladorGG, EntityModel<DTOdesarrollador>>  {
+        @SuppressWarnings("null")
         @Override
-        public EntityModel<DTOdesarrollador> toModel(DesarrolladorGG desarrolladorInterior) {
+        public EntityModel<DTOdesarrollador> toModel(@SuppressWarnings("null") DesarrolladorGG desarrolladorInterior) {
     
         DTOdesarrollador dtoExterior = new DTOdesarrollador();
         dtoExterior.setId(desarrolladorInterior.getId());

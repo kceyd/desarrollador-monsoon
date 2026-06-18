@@ -23,6 +23,7 @@ public class servicioDesarrollador {
             .baseUrl("http://localhost:8085/api/v0/juegos")
             .build();
  
+    @SuppressWarnings("null")
     public void crearDesarrollador(DesarrolladorGG desarrollador) {
         desarrolladorRepository.save(desarrollador);
     }
@@ -31,14 +32,17 @@ public class servicioDesarrollador {
         return desarrolladorRepository.findAll();
     }
  
+    @SuppressWarnings("null")
     public DesarrolladorGG obtenerDesarrollador(Long id) {
         return desarrolladorRepository.findById(id).orElse(null);
     }
  
+    @SuppressWarnings("null")
     public void actualizarDesarrollador(DesarrolladorGG desarrollador) {
         desarrolladorRepository.save(desarrollador);
     }
  
+    @SuppressWarnings("null")
     public void eliminarDesarrollador(Long id) {
         desarrolladorRepository.deleteById(id);
     }
