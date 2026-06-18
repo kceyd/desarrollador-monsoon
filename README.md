@@ -7,7 +7,7 @@ Gestiona los desarrolladores independientes de la plataforma. Se conecta al micr
 ## Tecnologías
 
 - Java 17
-- Spring Boot 4.0.6
+- Spring Boot 3.5.6
 - Spring Data JPA
 - Spring WebFlux (WebClient)
 - MySQL
