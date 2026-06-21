@@ -5,7 +5,7 @@ public class DTOdesarrollador {
     private Long id;
     private String nombre;
 
-    // --- REVISA QUE EL GETTER ESTÉ EXACTAMENTE ASÍ ---
+    
     public Long getId() {
         return id;
     }

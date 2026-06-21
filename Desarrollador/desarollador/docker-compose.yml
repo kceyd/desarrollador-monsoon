@@ -1,36 +1,17 @@
 version: '3.8'
 
 services:
-  mysql:
-    image: mysql:latest
-    container_name: mysql
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=productos_db
+  desarollador-v4:
+    container_name: desarollador-contenedor-v4
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p=root"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  app:
-    build: .
-    container_name: app
-    restart: on-failure
-    depends_on:
-      mysql:
-        condition: service_healthy
-    ports:
-      - "8080:8080"
+      - "8081:8081" # 👈 ¡CAMBIADO AQUÍ! (Mismo puerto adentro y afuera)
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/productos_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/db_desarrolladores?allowPublicKeyRetrieval=true&useSSL=false
       - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
-
-volumes:
-  mysql_data:
+      - SPRING_DATASOURCE_PASSWORD=
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    restart: always

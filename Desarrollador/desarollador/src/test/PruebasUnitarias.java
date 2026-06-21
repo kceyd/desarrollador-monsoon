@@ -28,18 +28,18 @@ public class PruebasUnitarias {
     private servicioDesarrollador desarrolladorService;
 
     @MockitoBean
-    private DesarrolladorAssembler assembler; // Lo necesita el controlador para HATEOAS
+    private DesarrolladorAssembler assembler; 
 
     @Test
     public void listarDesarrolladores_DeberiaRetornar200() throws Exception {
-        // 1. Simular el comportamiento del servicio interno
+       
         DesarrolladorGG dev = new DesarrolladorGG();
         dev.setId(1L);
         dev.setNombre("Kratos");
 
         when(desarrolladorService.obtenerDesarrolladores()).thenReturn(List.of(dev));
 
-        // 2. Ejecutar la petición simulada al controlador exterior
+        
         mockMvc.perform(get("/api/v0/desarrolladores"))
                .andExpect(status().isOk());
     }

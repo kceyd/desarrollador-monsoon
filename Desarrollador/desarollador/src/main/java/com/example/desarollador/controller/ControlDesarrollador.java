@@ -28,7 +28,7 @@ public class ControlDesarrollador {
     @SuppressWarnings("null")
     @GetMapping
     public CollectionModel<EntityModel<DTOdesarrollador>> obtenerDesarrolladores() {
-        // El servicio trae las entidades del "interior", el assembler las vuelve "exterior" con links
+        
         List<EntityModel<DTOdesarrollador>> desarrolladores = desarrolladorService.obtenerDesarrolladores()
                 .stream()
                 .map(assembler::toModel)
@@ -42,7 +42,7 @@ public class ControlDesarrollador {
     public EntityModel<DTOdesarrollador> obtenerDesarrollador(@PathVariable Long id) {
         DesarrolladorGG desarrollador = desarrolladorService.obtenerDesarrollador(id);
         if (desarrollador == null) {
-            return null; // O lanzar una excepción 404
+            return null; 
         }
         return assembler.toModel(desarrollador);
     }

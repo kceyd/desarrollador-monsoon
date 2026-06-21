@@ -13,7 +13,7 @@ public class DesarrolladorGG {
     private Long id;
     private String nombre;
 
-    // --- GETTER Y SETTER PARA ID ---
+    
     public Long getId() {
         return id;
     }
@@ -22,7 +22,7 @@ public class DesarrolladorGG {
         this.id = id;
     }
 
-    // --- GETTER Y SETTER PARA NOMBRE ---
+    
     public String getNombre() {
         return nombre;
     }
