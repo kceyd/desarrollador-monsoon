@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8081:8081" # 👈 ¡CAMBIADO AQUÍ! (Mismo puerto adentro y afuera)
+      - "8081:8081" #¡CAMBIADO AQUÍ! (Mismo puerto adentro y afuera)
     environment:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/db_desarrolladores?allowPublicKeyRetrieval=true&useSSL=false
